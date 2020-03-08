@@ -118,7 +118,7 @@
     reading. -->
 
   <!-- RpLidar A2 using GPU -->
-  <gazebo reference="laser">
+  <!-- <gazebo reference="laser">
     <sensor type="gpu_ray" name="head_rplidar_sensor">
       <pose>0 0 0.06 0 0 0</pose>
       <visualize>false</visualize>
@@ -148,7 +148,7 @@
         <frameName>laser</frameName>
       </plugin>
     </sensor>
-  </gazebo>
+  </gazebo> -->
 
   <!-- RpLidar A3 using GPU -->
   <!-- <gazebo reference="laser">
@@ -184,11 +184,11 @@
   </gazebo> -->
 
   <!-- RpLidar A2 using CPU -->
-  <!-- <gazebo reference="laser">
+  <gazebo reference="laser">
     <sensor type="ray" name="head_rplidar_sensor">
       <pose>0 0 0.06 0 0 0</pose>
-      <visualize>false</visualize>
-      <update_rate>40</update_rate>
+      <visualize>true</visualize>
+      <update_rate>10</update_rate>
       <ray>
         <scan>
           <horizontal>
@@ -214,7 +214,7 @@
         <frameName>laser</frameName>
       </plugin>
     </sensor>
-  </gazebo> -->
+  </gazebo>
 
   <!-- RpLidar A3 using CPU -->
   <!-- <gazebo reference="laser">
@@ -253,13 +253,13 @@
     <gravity>true</gravity>
     <sensor name="imu_sensor" type="imu">
       <always_on>true</always_on>
-      <update_rate>10</update_rate>
+      <update_rate>50</update_rate>
       <visualize>true</visualize>
       <topic>imu</topic>
       <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
         <topicName>imu</topicName>
         <bodyName>imu_link</bodyName>
-        <updateRateHZ>10.0</updateRateHZ>
+        <updateRateHZ>50.0</updateRateHZ>
         <gaussianNoise>0.0</gaussianNoise>
         <xyzOffset>0 0 0</xyzOffset>
         <rpyOffset>0 0 0</rpyOffset>
